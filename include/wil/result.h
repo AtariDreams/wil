@@ -1082,7 +1082,7 @@ namespace wil
             {
             }
 
-            bool NotifyFailure(FailureInfo const &failure) WI_NOEXCEPT
+            bool NotifyFailure(FailureInfo const &failure) WI_NOEXCEPT override
             {
                 return m_errorFunction(failure);
             }
@@ -1254,7 +1254,7 @@ namespace wil
             return (FAILED(m_failure.GetFailureInfo().hr) ? &(m_failure.GetFailureInfo()) : nullptr);
         }
 
-        bool NotifyFailure(FailureInfo const &failure) WI_NOEXCEPT
+        bool NotifyFailure(FailureInfo const &failure) WI_NOEXCEPT override
         {
             // When we "cache" a failure, we bias towards trying to find the origin of the last HRESULT
             // generated, so we ignore subsequent failures on the same error code (assuming propagation).

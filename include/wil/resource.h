@@ -4376,7 +4376,7 @@ namespace wil
     WI_NODISCARD inline unique_couninitialize_call CoInitializeEx_failfast(DWORD coinitFlags = 0 /*COINIT_MULTITHREADED*/)
     {
         FAIL_FAST_IF_FAILED(::CoInitializeEx(nullptr, coinitFlags));
-        return unique_couninitialize_call();
+        return {};
     }
 #endif // __WIL__COMBASEAPI_H_APP
 #if defined(__WIL__COMBASEAPI_H_APP) && defined(WIL_ENABLE_EXCEPTIONS) && !defined(__WIL__COMBASEAPI_H_APPEXCEPTIONAL)
@@ -4384,7 +4384,7 @@ namespace wil
     WI_NODISCARD inline unique_couninitialize_call CoInitializeEx(DWORD coinitFlags = 0 /*COINIT_MULTITHREADED*/)
     {
         THROW_IF_FAILED(::CoInitializeEx(nullptr, coinitFlags));
-        return unique_couninitialize_call();
+        return {};
     }
 #endif
 

@@ -172,7 +172,7 @@ namespace wistd     // ("Windows Implementation" std)
           >::type
       >
       __WI_LIBCPP_INLINE_VISIBILITY
-      constexpr __compressed_pair() {}
+      constexpr __compressed_pair() = default;
 
       template <class _Tp, typename enable_if<!is_same<typename decay<_Tp>::type,
                                                        __compressed_pair>::value,
